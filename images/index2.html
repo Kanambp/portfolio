@@ -1,18 +1,138 @@
-<section class="contact" id="contact">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    <h1 class="heading">make appointment we talk</h1>
- 
-    <form action="https://formspree.io/f/xrgvkpkz" method="post">
-       <span>your name :</span>
-       <input type="text" name="name" placeholder="enter your name" class="box" required>
-       <span>your email :</span>
-       <input type="email" name="email" placeholder="enter your email" class="box" required>
-       <span>your number :</span>
-       <input type="number" name="number" placeholder="enter your number" class="box" required>
-       <span>appointment date :</span>
-       <input type="datetime-local" name="date" class="box" required>
-       <input type="submit" value="make appointment" name="submit" class="link-btn">
-    </form>  
- 
- </section>
- 
+        .contact {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .heading {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtext {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .appointment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-field, .select-field, .textarea-field {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: white;
+            color: black;
+        }
+
+        .textarea-field {
+            height: 100px;
+            resize: none;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background: #ff3b3b;
+        }
+    </style>
+</head>
+<body>
+
+<section class="contact" id="contact">
+    <h2 class="heading">Make an Appointment</h2>
+    <p class="subtext">Fill in the details below, and we'll get back to you shortly.</p>
+
+    <form action="https://formspree.io/f/xrgvkpkz" method="post" class="appointment-form">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" class="input-field" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" class="input-field" required>
+        </div>
+
+        <div class="form-group">
+            <label for="number">Your Number</label>
+            <input type="tel" id="number" name="number" placeholder="1234567890" class="input-field" required pattern="[0-9]{10}">
+        </div>
+
+        <div class="form-group">
+            <label for="date">Appointment Date</label>
+            <input type="datetime-local" id="date" name="date" class="input-field" required>
+        </div>
+
+        <div class="form-group">
+            <label for="website-type">Type of Website</label>
+            <select id="website-type" name="website_type" class="select-field" required>
+                <option value="" disabled selected>Select website type</option>
+                <option value="Business Website">Business Website</option>
+                <option value="E-commerce Store">E-commerce Store</option>
+                <option value="Portfolio">Portfolio</option>
+                <option value="Blog">Blog</option>
+                <option value="Landing Page">Landing Page</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="details">Additional Details</label>
+            <textarea id="details" name="details" placeholder="Describe your requirements..." class="textarea-field"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Make Appointment</button>
+    </form>
+</section>
+
+</body>
+</html>
