@@ -569,14 +569,19 @@ section{
    margin:0 .3rem;
 }
 
-.footer .formfill a{
-   background-color: var(--white);
-   border:var(--border);
-   padding:.5rem 1.5rem;
-   height: 7rem;
-   width: 7rem;
-   line-height: 6.7rem;
-   font-size: 3rem;
+.footer .formfill .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Adjust color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
 }
 .footer .share a:hover{
    background-color: var(--black);
